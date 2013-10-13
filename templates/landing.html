@@ -1,0 +1,114 @@
+﻿<link href='http://fonts.googleapis.com/css?family=Baumans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400' rel='stylesheet' type='text/css'>
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Autocomplete - Default functionality</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <script>
+      $(function () {
+          var availableTags = [
+      "Frontier Bulk Assam Black Tea",
+      "The Coffee Bean Chai Tea",
+      "Arbor Teas Organic Rooibos Sample"
+    ];
+          $("#tags").autocomplete({
+              source: availableTags
+          });
+      });
+  </script>
+
+
+<style type="text/css">
+body {background-image: url("http://glaurung.planet.ee/img/grass_dark.jpg");}
+h1 {color:#116316; text-align: center; font-family: 'Baumans', cursive;}
+div { text-align: center; background-color: #54FF5F; box-shadow: -.5px .5px 15px 10px #116316; min-height:40%; max-width: 40%; clear: both; margin: auto; 
+      border-radius: 20px 15px / 15px 20px;}
+p {text-align:center; font-family: 'Source Sans Pro', sans-serif;}
+
+</style>
+</head>
+
+<br /><br />
+<div>
+<h1>ConsciousConsumer</h1>
+   <p>Enter an item into the field that matches a product in the limited (in development)
+      product database. This product is saved to the user's Purchases database. 
+   </p>
+   <p>
+   Each Product has a 1:10 value associated with it based off of GoodGuide.com's product 
+   sustainability ratings. Enter multiple items that you have "Purchased" and click View Your Score 
+   to view your "Average Consumer Score".
+   </p>
+<form action='/product_entry' method='POST'>
+    
+        <input id="tags" style="min-width:180px; min-height:30px; font-family: 'Baumans', cursive; border-radius: 5px 5px / 5px 5px" placeholder="Enter an item here!" type='text' name='product' />
+        <input style="min-width:120px; font-family: 'Baumans', cursive; box-shadow: -.5px .5px 1px 1px #116316; min-height: 30px; border-radius: 5px 5px / 5px 5px; color: White; border: .5px solid #116316;
+            background: #b4ddb4; /* Old browsers */
+            background: -moz-linear-gradient(top, #b4ddb4 0%, #83c783 17%, #52b152 33%, #008a00 67%, #005700 83%, #002400 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b4ddb4), color-stop(17%,#83c783), color-stop(33%,#52b152), color-stop(67%,#008a00), color-stop(83%,#005700), color-stop(100%,#002400)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', endColorstr='#002400',GradientType=0 ); /* IE6-9 */"
+            type='submit' />
+    
+
+</form>
+
+<table>
+    <thead>
+        <form action='/view_all' method='POST'>
+            <input style="min-width:170px; padding: 2px;font-family: 'Baumans', cursive; box-shadow: -.5px .5px 1px 1px #116316;
+                border-radius: 5px 5px / 5px 5px; color: White; border: .5px solid #116316;
+                background: #b4e391; /* Old browsers */
+                background: -moz-linear-gradient(top,  #b4e391 0%, #61c419 50%, #b4e391 100%); /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b4e391), color-stop(50%,#61c419), color-stop(100%,#b4e391)); /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(top,  #b4e391 0%,#61c419 50%,#b4e391 100%); /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(top,  #b4e391 0%,#61c419 50%,#b4e391 100%); /* Opera 11.10+ */
+                background: -ms-linear-gradient(top,  #b4e391 0%,#61c419 50%,#b4e391 100%); /* IE10+ */
+                background: linear-gradient(to bottom,  #b4e391 0%,#61c419 50%,#b4e391 100%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=0 ); /* IE6-9 */"
+                type='submit' value='View all Purchases' />
+        </form>
+    </thead>
+
+    <thead>
+        <form action='/view_product_db' method='POST'>
+        <input style="min-width:170px; padding:2px;font-family: 'Baumans', cursive; box-shadow: -.5px .5px 1px 1px #116316;
+            border-radius: 5px 5px / 5px 5px; color: White; border: .5px solid #116316;
+            background: #b4e391; /* Old browsers */
+            background: -moz-linear-gradient(top,  #b4e391 0%, #61c419 50%, #b4e391 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b4e391), color-stop(50%,#61c419), color-stop(100%,#b4e391)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  #b4e391 0%,#61c419 50%,#b4e391 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  #b4e391 0%,#61c419 50%,#b4e391 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  #b4e391 0%,#61c419 50%,#b4e391 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  #b4e391 0%,#61c419 50%,#b4e391 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=0 ); /* IE6-9 */" type='submit' value='View Product Database' />
+        </form>
+    </thead>
+
+    <thead>
+        <form action='/view_score' method='POST'>
+        <input style="min-width:170px;  margin-top: 10px; padding:12px;font-family: 'Baumans', cursive; box-shadow: -.5px .5px 1px 1px #116316;
+            border-radius: 5px 5px / 5px 5px; color: White; border: .5px solid #116316;
+            background: #b4e391; /* Old browsers */
+            background: -moz-linear-gradient(top,  #b4e391 0%, #61c419 50%, #b4e391 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b4e391), color-stop(50%,#61c419), color-stop(100%,#b4e391)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  #b4e391 0%,#61c419 50%,#b4e391 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  #b4e391 0%,#61c419 50%,#b4e391 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  #b4e391 0%,#61c419 50%,#b4e391 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  #b4e391 0%,#61c419 50%,#b4e391 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=0 ); /* IE6-9 */" 
+            type='submit' value='View Your Score!' />
+        </form>
+    </thead>
+</table>
+
+</div>
+
+
+<p style="color:#7AEAC7">Created by Sara Bajor 10.13.2013</p>
